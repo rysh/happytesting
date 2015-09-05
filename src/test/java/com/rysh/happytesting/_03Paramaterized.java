@@ -1,6 +1,7 @@
 package com.rysh.happytesting;
 
-import static com.rysh.happytesting.MergerTest.*;
+import static com.rysh.happytesting._01NormalJunit.*;
+import static com.rysh.happytesting._02ReadableJunit.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -13,7 +14,7 @@ import org.junit.contrib.theories.Theory;
 import org.junit.runner.RunWith;
 
 @RunWith(Theories.class)
-public class Paramaterized {
+public class _03Paramaterized {
 
     public static class Fixture {
         private final String label;
@@ -43,7 +44,7 @@ public class Paramaterized {
     }
 
     @Theory
-    private void checkContainingOrNot(Fixture f) {
+    public void checkContainingOrNot(Fixture f) {
         assertThat(f.label, resultAsIds(f.start, f.threshold, f.end), hasItems(f.includes.toArray(new Integer[0])));
         assertThat(f.label, resultAsIds(f.start, f.threshold, f.end), not(hasAnyOfItems(f.excludes.toArray(new Integer[0]))));
     }

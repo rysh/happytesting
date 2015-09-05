@@ -1,5 +1,6 @@
 package com.rysh.happytesting;
 
+import static com.rysh.happytesting._02ReadableJunit.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
@@ -15,12 +16,12 @@ import com.pholser.junit.quickcheck.ForAll;
 import com.pholser.junit.quickcheck.generator.InRange;
 
 @RunWith(Theories.class)
-public class QuickCheck {
+public class _05QuickCheck {
     @Theory
-    public void quicktest(@ForAll @InRange(min = "0", max = "31") int sizeOfA, 
-                          @ForAll @InRange(min = "0", max = "31") int sizeOfB) {
+    public void quicktest(@ForAll @InRange(min = "0", max = "31") Integer sizeOfA, 
+                          @ForAll @InRange(min = "0", max = "31") Integer sizeOfB) {
 
-        List<Integer> actual = MergerTest.resultAsIds(1, sizeOfA, sizeOfA + sizeOfB);
+        List<Integer> actual = resultAsIds(1, sizeOfA, sizeOfA + sizeOfB);
         Map<Boolean, List<Integer>> collect = actual.stream().collect(Collectors.partitioningBy(n -> n <= sizeOfA));
         List<Integer> valuesOfAinResult = collect.get(true);
         List<Integer> valuesOfBinResult = collect.get(false);
