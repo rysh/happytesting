@@ -7,5 +7,5 @@ There are JUnit test examples from basic style to parameterized test and Propert
 * _02ReadableJunit.java : It has been introduced in Readable code.
 * _03Paramaterized.java : One example of Parameterized test. This is recommended for general.
 * _04RandomTest.java    : I think this is a simple property-based testing.
-* _05QuickCheck.java    : Using junig-quickcheck.
+* _05QuickCheck.java    : Using junit-quickcheck.
 * _06BruteForce.java    : It counters the serious test engineer who deny random values.
